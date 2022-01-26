@@ -18,8 +18,8 @@
         },
         "constraint": {
             "PRIMARY": true,
-            "EXTENDED_WISHLIST_STORE_WISHLIST_ID_EXTENDED_WISHLIST_ID": true,
-            "EXTENDED_WISHLIST_STORE_STORE_ID_STORE_STORE_ID": true
+            "MAGE_PRO_EXTENDED_WISHLIST_STORE_WISHLIST_ID_BY_EXTENDED_WISHLIST_TABLE": true,
+            "MAGE_PRO_EXTENDED_WISHLIST_STORE_STORE_ID_BY_STORE_TABLE": true
         }
     },
     "extended_wishlist_customer": {
@@ -30,8 +30,8 @@
         },
         "constraint": {
             "PRIMARY": true,
-            "EXTENDED_WISHLIST_CUSTOMER_WISHLIST_ID_EXTENDED_WISHLIST_ID": true,
-            "EXTENDED_WISHLIST_CUSTOMER_CUSTOMER_ID_CUSTOMER_ENTITY_ENTITY_ID": true
+            "MAGE_PRO_EXTENDED_WISHLIST_WISHLIST_ID_BY_EXTENDED_WISHLIST_TABLE": true,
+            "MAGE_PRO_EXTENDED_WISHLIST_WISHLIST_ID_BY_CUSTOMER_ENTITY": true
         }
     },
     "extended_wishlist_product": {
@@ -47,9 +47,9 @@
         },
         "constraint": {
             "PRIMARY": true,
-            "EXTENDED_WISHLIST_PRD_PRD_ID_CAT_PRD_ENTT_ENTT_ID": true,
-            "EXTENDED_WISHLIST_PRODUCT_SKU_CATALOG_PRODUCT_ENTITY_SKU": true,
-            "EXTENDED_WISHLIST_PRODUCT_WISHLIST_ID_EXTENDED_WISHLIST_ID": true
+            "MAGE_PRO_EXTENDED_WISHLIST_PRODUCT_ID_BY_CATALOG_PRODUCT_ENTITY": true,
+            "MAGE_PRO_EXTENDED_WISHLIST_SKU_BY_CATALOG_PRODUCT_ENTITY": true,
+            "MAGE_PRO_EXTENDED_WISHLIST_WISHLIST_ID_BY_CATALOG_PRODUCT_ENTITY": true
         }
     }
 }
