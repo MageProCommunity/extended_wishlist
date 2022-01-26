@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+
+    <!--START extended_wishlist -->
+    <table name="extended_wishlist" resource="default" engine="innodb">
+        <column xsi:type="int" name="id" nullable="false" identity="true"/>
+        <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Name of wishlist"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Update Time"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+
+    </table>
+    <!--END extended_wishlist -->
+
+    <!--START extended_wishlist_store-->
+    <table name="extended_wishlist_store" resource="default" engine="innodb">
+        <column xsi:type="int" name="id" nullable="false" identity="true"/>
+        <column xsi:type="int" name="wishlist_id" nullable="false" identity="true"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true" identity="true"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+
+        <constraint xsi:type="foreign"
+                    referenceId="MAGE_PRO_EXTENDED_WISHLIST_STORE_WISHLIST_ID_BY_EXTENDED_WISHLIST_TABLE"
+                    table="extended_wishlist_store" column="wishlist_id" referenceTable="extended_wishlist"
+                    referenceColumn="id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="MAGE_PRO_EXTENDED_WISHLIST_STORE_STORE_ID_BY_STORE_TABLE"
+                    table="extended_wishlist_store" column="store_id" referenceTable="store"
+                    referenceColumn="store_id" onDelete="CASCADE"/>
+    </table>
+    <!--END extended_wishlist_store-->
+
+    <!--START extended_wishlist_customer-->
+    <table name="extended_wishlist_customer" resource="default" engine="innodb">
+        <column xsi:type="int" name="id" nullable="false" identity="true"/>
+        <column xsi:type="int" name="wishlist_id" identity="true" comment="Wishlist ID"/>
+        <column xsi:type="int" name="customer_id" unsigned="true" identity="true" comment="Customer ID"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+
+        <constraint xsi:type="foreign" referenceId="MAGE_PRO_EXTENDED_WISHLIST_WISHLIST_ID_BY_EXTENDED_WISHLIST_TABLE"
+                    table="extended_wishlist_customer" column="wishlist_id" referenceTable="extended_wishlist"
+                    referenceColumn="id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="MAGE_PRO_EXTENDED_WISHLIST_WISHLIST_ID_BY_CUSTOMER_ENTITY"
+                    table="extended_wishlist_customer" column="customer_id" referenceTable="customer_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+    </table>
+    <!--END extended_wishlist_customer-->
+
+    <!--START extended_wishlist_product -->
+    <table name="extended_wishlist_product" resource="default" engine="innodb">
+        <column xsi:type="int" name="id" nullable="false" identity="true"/>
+        <column xsi:type="int" name="wishlist_id" nullable="false" identity="false"/>
+        <column xsi:type="varchar" name="sku" nullable="false" length="64" comment="SKU of product wishlist"/>
+        <column xsi:type="int" name="product_id" nullable="false" unsigned="true" comment="Product ID"/>
+        <column xsi:type="decimal" name="qty" scale="4" precision="20" nullable="false"/>
+        <column xsi:type="text" name="comment" nullable="true" comment="Comment"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Update Time"/>
+
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="id"/>
+        </constraint>
+
+        <constraint xsi:type="foreign"
+                    referenceId="MAGE_PRO_EXTENDED_WISHLIST_PRODUCT_ID_BY_CATALOG_PRODUCT_ENTITY"
+                    table="extended_wishlist_product" column="product_id" referenceTable="catalog_product_entity"
+                    referenceColumn="entity_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="MAGE_PRO_EXTENDED_WISHLIST_SKU_BY_CATALOG_PRODUCT_ENTITY"
+                    table="extended_wishlist_product" column="sku" referenceTable="catalog_product_entity"
+                    referenceColumn="sku" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="MAGE_PRO_EXTENDED_WISHLIST_WISHLIST_ID_BY_CATALOG_PRODUCT_ENTITY"
+                    table="extended_wishlist_product" column="wishlist_id" referenceTable="extended_wishlist"
+                    referenceColumn="id" onDelete="CASCADE"/>
+    </table>
+    <!--END extended_wishlist_product -->
+</schema>
