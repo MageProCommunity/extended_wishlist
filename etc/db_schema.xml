@@ -21,8 +21,8 @@
     <!--START extended_wishlist_store-->
     <table name="extended_wishlist_store" resource="default" engine="innodb">
         <column xsi:type="int" name="id" nullable="false" identity="true"/>
-        <column xsi:type="int" name="wishlist_id" nullable="false" identity="true"/>
-        <column xsi:type="smallint" name="store_id" unsigned="true" identity="true"/>
+        <column xsi:type="int" name="wishlist_id" nullable="false"/>
+        <column xsi:type="smallint" name="store_id" unsigned="true"/>
 
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
@@ -41,8 +41,8 @@
     <!--START extended_wishlist_customer-->
     <table name="extended_wishlist_customer" resource="default" engine="innodb">
         <column xsi:type="int" name="id" nullable="false" identity="true"/>
-        <column xsi:type="int" name="wishlist_id" identity="true" comment="Wishlist ID"/>
-        <column xsi:type="int" name="customer_id" unsigned="true" identity="true" comment="Customer ID"/>
+        <column xsi:type="int" name="wishlist_id" comment="Wishlist ID"/>
+        <column xsi:type="int" name="customer_id" unsigned="true" comment="Customer ID"/>
 
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="id"/>
@@ -60,7 +60,7 @@
     <!--START extended_wishlist_product -->
     <table name="extended_wishlist_product" resource="default" engine="innodb">
         <column xsi:type="int" name="id" nullable="false" identity="true"/>
-        <column xsi:type="int" name="wishlist_id" nullable="false" identity="false"/>
+        <column xsi:type="int" name="wishlist_id" nullable="false"/>
         <column xsi:type="varchar" name="sku" nullable="false" length="64" comment="SKU of product wishlist"/>
         <column xsi:type="int" name="product_id" nullable="false" unsigned="true" comment="Product ID"/>
         <column xsi:type="decimal" name="qty" scale="4" precision="20" nullable="false"/>
