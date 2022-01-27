@@ -1,4 +1,4 @@
-#Extended Wishlist
+# Extended Wishlist
 [![Version](https://img.shields.io/badge/v1.0.0-beta-yellowgreen)](https://github.com/mageprocommunity/extended-wishlist)
 
 ## Installation
