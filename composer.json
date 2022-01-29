@@ -1,21 +1,22 @@
 {
-  "name": "magepro/extended-wishlist",
-  "version": "1.0.0",
-  "description": "N/A",
-  "type": "magento2-module",
-  "require": {
-    "magento/framework": "*",
-    "magento/module-wishlist": "*"
-  },
-  "license": [
-    "Open Software License (OSL)"
-  ],
-  "autoload": {
-    "files": [
-      "registration.php"
+    "name": "magepro/extended-wishlist",
+    "version": "1.0.0",
+    "description": "N/A",
+    "type": "magento2-module",
+    "require": {
+        "php": "~7.4.0||~8.1.0",
+        "magento/framework": "*",
+        "magento/module-wishlist": "*"
+    },
+    "license": [
+        "Open Software License (OSL)"
     ],
-    "psr-4": {
-      "MagePro\\ExtendedWishlist\\": ""
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "MagePro\\ExtendedWishlist\\": ""
+        }
     }
-  }
 }
