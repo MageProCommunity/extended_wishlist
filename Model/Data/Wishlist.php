@@ -8,7 +8,7 @@ declare(strict_types=1);
 namespace MagePro\ExtendedWishlist\Model\Data;
 
 use MagePro\ExtendedWishlist\Api\Data\WishlistInterface;
-use MagePro\ExtendedWishlist\Api\WishlistExtensionInterface;
+use MagePro\ExtendedWishlist\Api\Data\WishlistExtensionInterface;
 
 /**
  * Extended Wishlist data object.

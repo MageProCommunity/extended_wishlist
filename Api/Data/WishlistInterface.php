@@ -8,7 +8,6 @@ declare(strict_types=1);
 namespace MagePro\ExtendedWishlist\Api\Data;
 
 use Magento\Framework\Api\ExtensibleDataInterface;
-use MagePro\ExtendedWishlist\Api\WishlistExtensionInterface;
 
 /**
  * Represents an extended wishlist which contains information such as wishlist name, date of creation or update.
@@ -46,14 +45,14 @@ interface WishlistInterface extends ExtensibleDataInterface
     /**
      * Retrieve existing extension attributes object or create a new one.
      *
-     * @return WishlistExtensionInterface|null
+     * @return MagePro\ExtendedWishlist\Api\Data\WishlistExtensionInterface|null
      */
     public function getExtensionAttributes(): ?WishlistExtensionInterface;
 
     /**
      * Set extension attributes
      *
-     * @param WishlistExtensionInterface|null $extensionAttributes
+     * @param MagePro\ExtendedWishlist\Api\Data\WishlistExtensionInterface|null $extensionAttributes
      * @return void
      */
     public function setExtensionAttributes(?WishlistExtensionInterface $extensionAttributes): void;
