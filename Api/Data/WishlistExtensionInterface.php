@@ -5,7 +5,7 @@
  */
 declare(strict_types=1);
 
-namespace MagePro\ExtendedWishlist\Api;
+namespace MagePro\ExtendedWishlist\Api\Data;
 
 /**
  * ExtensionInterface class for @see \MagePro\ExtendedWishlist\Api\Data\WishlistInterface
