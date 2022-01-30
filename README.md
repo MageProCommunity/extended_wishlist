@@ -1,7 +1,9 @@
 # Extended Wishlist
 [![Version](https://img.shields.io/badge/v1.0.0-beta-yellowgreen)](https://github.com/mageprocommunity/extended-wishlist)
-[![Version](https://img.shields.io/badge/magento-2.4.*-orange)]()
-[![Version](https://img.shields.io/badge/magento-2.3.*-green)]()
+[![Version](https://img.shields.io/badge/magento-2.4.*-orange)](https://github.com/mageprocommunity/extended-wishlist)
+[![Version](https://img.shields.io/badge/magento-2.3.*-green)](https://github.com/mageprocommunity/extended-wishlist)
+[![Version](https://img.shields.io/badge/php-~7.4.0-blue)](https://github.com/mageprocommunity/extended-wishlist)
+[![Version](https://img.shields.io/badge/php-~8.1.0-blue)](https://github.com/mageprocommunity/extended-wishlist)
 
 ## Installation
 
