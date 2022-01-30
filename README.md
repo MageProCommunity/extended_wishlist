@@ -1,5 +1,7 @@
 # Extended Wishlist
 [![Version](https://img.shields.io/badge/v1.0.0-beta-yellowgreen)](https://github.com/mageprocommunity/extended-wishlist)
+[![Version](https://img.shields.io/badge/magento-2.4.*-orange)]()
+[![Version](https://img.shields.io/badge/magento-2.3.*-green)]()
 
 ## Installation
 
