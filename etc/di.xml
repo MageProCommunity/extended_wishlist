@@ -8,4 +8,8 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <preference for="MagePro\ExtendedWishlist\Api\Data\WishlistInterface"
                 type="MagePro\ExtendedWishlist\Model\Data\Wishlist"/>
+    <preference for="MagePro\ExtendedWishlist\Api\Data\ProductInterface"
+                type="MagePro\ExtendedWishlist\Model\Data\Product"/>
+    <preference for="MagePro\ExtendedWishlist\Api\SaveWishlistInterface"
+                type="MagePro\ExtendedWishlist\Model\SaveWishlist"/>
 </config>

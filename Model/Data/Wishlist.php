@@ -11,7 +11,7 @@ use MagePro\ExtendedWishlist\Api\Data\WishlistInterface;
 use MagePro\ExtendedWishlist\Api\Data\WishlistExtensionInterface;
 
 /**
- * Extended Wishlist data object.
+ * Responsble for the extended wishlist object.
  */
 class Wishlist implements WishlistInterface
 {
@@ -48,7 +48,7 @@ class Wishlist implements WishlistInterface
      * @param WishlistExtensionInterface|null $extensionAttributes
      */
     public function __construct(
-        ?int    $id = null,
+        ?int $id = null,
         ?string $name = null,
         ?string $createdAt = null,
         ?string $updatedAt = null,
@@ -94,7 +94,7 @@ class Wishlist implements WishlistInterface
     }
 
     /**
-     * @return WishlistExtensionInterface|null
+     * @inheritDoc
      */
     public function getExtensionAttributes(): ?WishlistExtensionInterface
     {
@@ -102,8 +102,7 @@ class Wishlist implements WishlistInterface
     }
 
     /**
-     * @param WishlistExtensionInterface|null $extensionAttributes
-     * @return void
+     * @inheritDoc
      */
     public function setExtensionAttributes(?WishlistExtensionInterface $extensionAttributes): void
     {
