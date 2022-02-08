@@ -7,7 +7,7 @@
 
 ## Installation
 
-`composer require composer require magepro/extended-wishlist`
+composer require magepro/extended-wishlist`
 
 ## Compatible with
 
