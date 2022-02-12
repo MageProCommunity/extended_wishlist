@@ -5,6 +5,8 @@
  */
 declare(strict_types=1);
 
+namespace MagePro\ExtendedWishlist\Model;
+
 use Magento\Framework\App\ResourceConnection;
 use Magento\Framework\Exception\CouldNotSaveException;
 use MagePro\ExtendedWishlist\Api\Data\WishlistInterface;
