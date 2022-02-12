@@ -6,10 +6,29 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
     <preference for="MagePro\ExtendedWishlist\Api\Data\WishlistInterface"
                 type="MagePro\ExtendedWishlist\Model\Data\Wishlist"/>
     <preference for="MagePro\ExtendedWishlist\Api\Data\ProductInterface"
                 type="MagePro\ExtendedWishlist\Model\Data\Product"/>
     <preference for="MagePro\ExtendedWishlist\Api\SaveWishlistInterface"
                 type="MagePro\ExtendedWishlist\Model\SaveWishlist"/>
+
+    <!--START: Custom logger configuration for MagePro_ExtendedWishlist-->
+    <type name="MagePro\ExtendedWishlist\Logger\HandlerLog">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+
+    <type name="MagePro\ExtendedWishlist\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">mageproExtendedWishlistLogger</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">MagePro\ExtendedWishlist\Logger\HandlerLog</item>
+            </argument>
+        </arguments>
+    </type>
+    <!--END: Custom logger configuration for MagePro_ExtendedWishlist-->
+
 </config>
