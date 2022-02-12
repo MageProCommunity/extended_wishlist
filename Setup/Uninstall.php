@@ -1,4 +1,9 @@
-<?php declare(strict_types=1);
+<?php
+/**
+ * Copyright © 2022 - MagePro, community
+ * See COPYING.txt for license details.
+ */
+declare(strict_types=1);
 
 namespace MagePro\ExtendedWishlis\Setup;
 
@@ -19,7 +24,7 @@ class Uninstall implements UninstallInterface
     /**
      * Remove data that was created during module installation.
      *
-     * @param SchemaSetupInterface   $installer
+     * @param SchemaSetupInterface $installer
      * @param ModuleContextInterface $context
      *
      * @return void
