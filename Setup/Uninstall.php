@@ -7,10 +7,11 @@ declare(strict_types=1);
 
 namespace MagePro\ExtendedWishlis\Setup;
 
-use Magento\Framework\Setup\UninstallInterface;
-use Magento\Framework\Setup\SchemaSetupInterface;
+use Magento\Framework\DB\Adapter\AdapterInterface;
+use Magento\Framework\Db\Select;
 use Magento\Framework\Setup\ModuleContextInterface;
-use MagePro\ExtendedWishlist\Exception\Setup\UninstallPatchException;
+use Magento\Framework\Setup\SchemaSetupInterface;
+use Magento\Framework\Setup\UninstallInterface as UninstallInterface;
 
 class Uninstall implements UninstallInterface
 {
@@ -36,12 +37,8 @@ class Uninstall implements UninstallInterface
         /** @var AdapterInterface $connection */
         $connection = $installer->getConnection();
 
-        try {
-            foreach (self::LIST_MAGE_PRO_WISHLIST_TABLES as $wishlistTable) {
-                $connection->dropTable($wishlistTable);
-            }
-        } catch (UninstallPatchException $exception) {
-
+        foreach (self::LIST_MAGE_PRO_WISHLIST_TABLES as $wishlistTable) {
+            $connection->dropTable($wishlistTable);
         }
 
         $installer->endSetup();
